@@ -22,12 +22,12 @@
   Jest: "global" coverage threshold for functions (80%) not met: 9.52%
 --> */
 
+import * as CONSTANTS from '../const/const.js';
+import {checkFormValidity, submit} from '../src/utils.js';
 import CreditasChallenge, {
-  checkFormValidity,
   getFormValues,
   toStringFormValues,
-  Send,
-  Submit
+  Send
 } from '../src/index'
 
 function initializeAppMock () {
@@ -70,7 +70,7 @@ describe('Creditas Challenge', () => {
   describe('Method: Submit', () => {
     it('should add event listener to submit data form', () => {
       const container = document.querySelector('.form')
-      Submit(container)
+      submit(container)
     })
   })
 })
